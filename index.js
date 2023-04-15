@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const { eventHandler } = require('./components/eventHandler');
+const { eventHandler } = require('./src/components/eventHandler');
 
 // Set config on dotenv
 dotenv.config();
@@ -15,7 +15,7 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 client.commands = new Collection();
 
 // Set path from each command
-const commandsPath = path.join(__dirname, 'commands');
+const commandsPath = path.join(__dirname, '/src/commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
 commandFiles.forEach(file => {
