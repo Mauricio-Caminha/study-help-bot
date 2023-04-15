@@ -22,19 +22,16 @@ module.exports = {
   buildResponseFromSelectButton(question, response) {
     const commandsEmbed = new EmbedBuilder()
       .setColor('Red')
-      .setTitle('Bem vindo ao StudyHelp 👋 ')
+      .setTitle(`Dica de ${question} 📚`)
       .setThumbnail('https://www.uniritter.edu.br/wp-content/uploads/2022/06/imagem_2022-06-01_145619421-removebg-preview.png')
       .addFields(
         { name: '\u200B', value: '\u200B' },
-        { name: question, value: response },
+        { name: ' ', value: response },
         { name: '\u200B', value: '\u200B' },
       )
       .setTimestamp()
       .setFooter({ text: 'Bons estudos!', iconURL: 'https://www.uniritter.edu.br/wp-content/uploads/2022/06/imagem_2022-06-01_145619421-removebg-preview.png' });
 
       return commandsEmbed;
-  }
-
-
+  },
 }
-
