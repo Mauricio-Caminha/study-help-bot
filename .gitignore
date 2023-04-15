@@ -1,0 +1,9 @@
+
+# Dependências
+/node_modules
+
+# Configuração de Instalações
+package-lock.json
+
+# Dados Sensíveis
+.env

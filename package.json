@@ -1,0 +1,17 @@
+{
+  "name": "bot-discord",
+  "version": "1.0.0",
+  "description": "Sistema Especialista para auxiliar alunos calouros com planos de estudos baseados no semestre ou pre-requisitos de disciplinas.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "setCommands": "node deploy-commands.js"
+  },
+  "keywords": [],
+  "author": "Maurício Caminha, Marcos Marnatti, João Beck, Pedro Kimura",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.9.0",
+    "dotenv": "^16.0.3"
+  }
+}
