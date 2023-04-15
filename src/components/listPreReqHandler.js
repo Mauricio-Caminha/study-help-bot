@@ -1,15 +1,15 @@
 const { EmbedBuilder } = require('discord.js');
 
 const preReqTips = {
-  'tecnicas de programacao': 'aa',
-  'banco de dados': 'bb',
-  'cálculo aplicado - uma variável': 'cc',
-  'estrutura de dados': 'dd',
-  'programacao orientada a objetos': 'ee',
-  'álgebra linear computacional': 'ff',
-  'analise de algoritmos': 'gg',
-  'práticas de engenharia de software': 'hh',
-  'computacao para dispositivos moveis': 'ii',
+  'tecnicas de programacao': 'Lógica de Programação',
+  'banco de dados': 'Lógica de Programação',
+  'cálculo aplicado - uma variável': 'Laboratório de Matemática e Física',
+  'estrutura de dados': 'Lógica de Programação, Técnicas de Programação',
+  'programacao orientada a objetos': 'Lógica de Programação, Técnicas de Programação',
+  'álgebra linear computacional': 'Laboratório de Matemática e Física, Cálculo aplicado - uma variável',
+  'analise de algoritmos': 'Estrutura de dados, Algoritimos de Ordenação e Técnicas de Armazenamento',
+  'práticas de engenharia de software': 'Engenharia de Software',
+  'computacao para dispositivos moveis': 'Orientação Objeto, Técnicas de Programação, Algoritimos de Ordenação e Técnicas de Armazenamento',
 };
 
 module.exports = {
