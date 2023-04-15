@@ -2,9 +2,9 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 const commandsEmbed = new EmbedBuilder()
 	.setColor('Red')
-	.setTitle('Bem vindo ao StudyHelp')
+	.setTitle('Bem vindo ao StudyHelp 👋 ')
 	.setURL('https://github.com/Mauricio-Caminha/study-help-bot.git')
-	.setDescription('Lista os comandos disponíveis no StudyHelp')
+	.setDescription('Desenvolvido para ajudar alunos calouros do curso de TI da uniRitter')
   .setThumbnail('https://www.uniritter.edu.br/wp-content/uploads/2022/06/imagem_2022-06-01_145619421-removebg-preview.png')
 	.addFields(
 		{ name: '\u200B', value: '\u200B' },
