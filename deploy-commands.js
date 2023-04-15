@@ -20,8 +20,7 @@ const rest = new REST({ version: '10' }).setToken(TOKEN);
 (async () => {
   try {
     console.log(`Reseting ${commands.length} commands...`);
-    // console.log(commands);
-
+  
     const data = await rest.put(
       Routes.applicationGuildCommands(APPLICATION_ID, GUILD_ID),
       { body: commands }

@@ -4,6 +4,8 @@ const dotenv = require('dotenv');
 const fs = require('node:fs');
 const path = require('node:path');
 
+const { eventHandler } = require('./components/eventHandler');
+
 // Set config on dotenv
 dotenv.config();
 const { TOKEN } = process.env;
@@ -33,24 +35,10 @@ client.once(Events.ClientReady, c => {
   console.log(`Ready! Logged in as ${c.user.tag}`);
 });
 
-// Log in to Discord with your client's token
-client.login(TOKEN);
 
 client.on(Events.InteractionCreate, async (interaction) => {
-  if (!interaction.isChatInputCommand) return;
-
-  const command = interaction.client.commands.get(interaction.commandName);
-
-  if (!command) {
-    console.log('Command not found!');
-    return;
-  }
-
-  try {
-    await command.execute(interaction);
-
-  } catch (error) {
-    console.error(error);
-    await interaction.reply('Error to execute this command!');
-  }
+  eventHandler(interaction);
 });
+
+// Log in to Discord with your client's token
+client.login(TOKEN);
