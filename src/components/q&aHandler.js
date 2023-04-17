@@ -29,20 +29,4 @@ module.exports = {
       }
     }
   },
-
-
-  buildResponseFromSelectedStringFromMenu(selected, response) {
-    const commandsEmbed = new EmbedBuilder()
-      .setColor('Red')
-      .setTitle(`Pre-Requisitos 📖\n\ ${selected.toUpperCase()} `)
-      .addFields(
-        { name: '\u200B', value: '\u200B' },
-        { name: response, value: ' ' },
-        { name: '\u200B', value: '\u200B' },
-      )
-      .setTimestamp()
-      .setFooter({ text: 'Bons estudos!', iconURL: 'https://www.uniritter.edu.br/wp-content/uploads/2022/06/imagem_2022-06-01_145619421-removebg-preview.png' });
-
-    return commandsEmbed;
-  },
 }
