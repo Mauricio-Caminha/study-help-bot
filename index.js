@@ -1,20 +1,22 @@
-// Require the necessary discord.js classes
 const { Client, Events, GatewayIntentBits, Collection } = require('discord.js');
 const dotenv = require('dotenv');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const { eventHandler } = require('./src/components/eventHandler');
+const { eventHandler, messageEventHandler } = require('./src/components/eventHandler');
 
-// Set config on dotenv
 dotenv.config();
 const { TOKEN } = process.env;
 
-// Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildMessageReactions,
+  ]
+});
 client.commands = new Collection();
 
-// Set path from each command
 const commandsPath = path.join(__dirname, '/src/commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
@@ -25,20 +27,20 @@ commandFiles.forEach(file => {
   if ('data' in command && 'execute' in command) {
     client.commands.set(command.data.name, command);
   } else {
-    console.log(`This command in ${filePath} does not have 'data' or 'execute' in attributes!`);
+    console.log(`Este comando no caminho ${filePath} não possui 'data' ou 'execute' nos seus atributos!`);
   }
 });
 
-// When the client is ready, run this code (only once)
-// We use 'c' for the event parameter to keep it separate from the already defined 'client'
 client.once(Events.ClientReady, c => {
-  console.log(`Ready! Logged in as ${c.user.tag}`);
+  console.log(`Pronto! Autenticado como ${c.user.tag}`);
 });
 
+client.on('messageCreate', (message) => {
+  messageEventHandler(message);
+});
 
 client.on(Events.InteractionCreate, async (interaction) => {
   eventHandler(interaction);
 });
 
-// Log in to Discord with your client's token
 client.login(TOKEN);

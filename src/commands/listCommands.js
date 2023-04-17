@@ -12,6 +12,7 @@ const commandsEmbed = new EmbedBuilder()
 		{ name: '/listar-pre-requisitos', value: 'Lista os pre-requisitos da disciplina escolhida' },
 		{ name: '/otimizar-estudos', value: 'Dá dicas para otimização da rotina de estudos'},
 		{ name: '/plano-de-estudos', value: 'Recomenda conhecimentos básicos para cada disciplina do semestre escolhido'},
+		{ name: '@StudyHelp', value: 'Marcar o bot e fazer uma pergunta, faz com que ele responda sugestões de estudos para o semestre escolhido e plataformas para estudo.'},
     { name: '\u200B', value: '\u200B' },
 	)
 	.setTimestamp()

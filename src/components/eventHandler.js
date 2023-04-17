@@ -1,5 +1,6 @@
 const { buildResponseFromSelectButton, sendResponse } = require("./studyOptimizationHandler");
 const { buildResponseFromSelectedStringFromMenu, sendResponsePreReq } = require("./listPreReqHandler");
+const { verifyWhoSendAndSendAnswerForQuestion } = require("./q&aHandler");
 
 module.exports = {
 
@@ -7,7 +8,6 @@ module.exports = {
 
     if (interaction.isStringSelectMenu()) {
       const selected = interaction.values[0];
-      console.log(interaction)
       const response = sendResponsePreReq(selected);
       const selectStringEmbed = buildResponseFromSelectedStringFromMenu(selected, response);
 
@@ -44,5 +44,15 @@ module.exports = {
         await interaction.reply('Error to execute this command!');
       }
     }
-  }
+  },
+
+  async messageEventHandler(message) {
+    
+    const answer = await verifyWhoSendAndSendAnswerForQuestion(message);
+    
+    if(answer) {
+      message.channel.send(answer);
+    }
+
+  },
 }
