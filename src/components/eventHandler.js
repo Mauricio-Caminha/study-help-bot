@@ -1,6 +1,6 @@
 const { buildResponseFromSelectButton, sendResponse } = require("./studyOptimizationHandler");
 const { buildResponseFromSelectedStringFromMenu, sendResponsePreReq } = require("./listPreReqHandler");
-const { verifyWhoSendAndSendAnswerForQuestion } = require("./q&aHandler");
+const { verifyWhoSendAndSendAnswerForQuestion } = require("./questionAnswerHandler");
 
 module.exports = {
 
